@@ -33,7 +33,7 @@ public class Network {
 		
 	}
 	
-	public void printBiases(Network net) {
+	public static void printBiases(Network net) {
 		for (double[] size: net.biases) {
 			System.out.println("Layer:");
 			for (double bias : size) {
@@ -45,5 +45,6 @@ public class Network {
 	public static void main(String[] args) {
 		int[] sizes = new int[]{784, 15, 10};
 		Network thisNet = new Network(sizes);
+		printBiases(thisNet);
 	}
 }
