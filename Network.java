@@ -80,6 +80,24 @@ public class Network {
 		}
 	}
 	
+	public static void SGD(int[][][] trainingData, int epochs, 
+			int miniBatchSize, double eta, int[][][]...test_data) {
+		
+		
+		
+		
+		
+	}
+	
+	public static void update_mini_batch(int[][][] miniBatch, double eta) {
+		
+		
+		
+	
+	}
+	
+	//Functions to add : backProp, evaluate, costDerivative, sigmoid, sigmoidPrime
+	
 	public static void main(String[] args) {
 		int[] sizes = new int[]{784, 15, 10};
 		Network thisNet = new Network(sizes);
