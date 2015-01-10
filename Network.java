@@ -1,5 +1,3 @@
-package handwritingrecognition;
-
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -385,11 +383,10 @@ public class Network {
 	public static void main(String[] args) {		
 		int[] sizes = new int[]{784, 15, 10};
 		Network thisNet = new Network(sizes);
-		thisNet.printWeights();
 		String[] files = new String[2];
-		files[0] = "src/handwritingrecognition/train-labels-idx1-ubyte";
-		files[1] = "src/handwritingrecognition/train-images-idx3-ubyte";
-		try{
+        files[0] = "train-labels-idx1-ubyte";
+        files[1] = "train-images-idx3-ubyte";
+        try{
 			ArrayList<double[][]> data = MNISTReader.getMNIST(files);
 			int dataSize = data.size();
 			int split = (int)(0.7*dataSize);
@@ -397,7 +394,9 @@ public class Network {
 			ArrayList<double[][]> test = new ArrayList<double[][]>(data.subList(split, dataSize-1));		
 			thisNet.SGD(train, test, 30, 10, 3.0);
 		} catch (IOException e) {
-			
+            
+            System.out.println("Exception! E: ");
+            System.out.print(e);
 		} 
 	} 
 }

@@ -1,4 +1,4 @@
-package handwritingrecognition;
+//package handwritingrecognition;
 
 import java.util.Arrays;
 
